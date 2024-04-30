@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  doxygen:
+    build: ./
+    container_name: doxygen
+    volumes:
+      - ./Doxyfile:/doxygen/Doxyfile:ro
+      - ./src:/doxygen/src:ro
+      - ./dst:/doxygen/dst
+    command : doxygen Doxyfile
